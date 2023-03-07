@@ -1,0 +1,146 @@
+/* FONT PATH
+ * -------------------------- */
+$font-path: "https://opz-cdn.opezee.com/assets/fonts" !default;
+
+@font-face {
+  font-family: "geometria";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Italic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Thin"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Thin.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-ThinItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-ThinItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Thin\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-ExtraLight"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ ExtraLight.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-ExtraLightItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-ExtraLightItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ ExtraLight\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Light"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Light.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-LightItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-LightItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Light\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Medium"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Medium.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-MediumItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-MediumItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Medium\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Bold"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Bold.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-BoldItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-BoldItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Bold\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-ExtraBold"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ ExtraBold.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-ExtraBoldItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-ExtraBoldItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ ExtraBold\ Italic.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-Heavy"),
+    url("#{$font-path}/Geometria/Brownfox - Geometria Heavy.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "geometria-HeavyItalic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("geometria-HeavyItalic"),
+    url("#{$font-path}/Geometria/Brownfox\ -\ Geometria\ Heavy\ Italic.otf")
+      format("opentype");
+}

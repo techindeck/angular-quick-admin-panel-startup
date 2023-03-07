@@ -1,0 +1,239 @@
+<!-- Filters -->
+<div class="filter">
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="filterBy" class="m-0 lbl-text-medium" tabindex="0"
+        >Filter by:</label
+      >
+    </div>
+    <div class="col-sm-6 text-right">
+      <a
+        class="d-block cursor-pointer float-end"
+        role="link"
+        tabindex="0"
+        (click)="clearFilters()"
+        >clear all filters</a
+      >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="filter-item">
+        <!-- Department/Category -->
+        <div class="select show-search field-controller">
+          <ng-select
+            name="department"
+            tabindex="0"
+            placeholder="Categories"
+            [(ngModel)]="filterForm.department"
+            (ngModelChange)="
+              handleFilterChange('filter', 'department', filterForm.department)
+            "
+            [clearable]="false"
+          >
+            <ng-option
+              *ngFor="let x of filterData.department | orderBy: 'dept'"
+              [value]="x.id"
+              tabindex="0"
+              >{{ x.dept }}
+            </ng-option>
+          </ng-select>
+          <div
+            class="form-group mt-3 input-group"
+            *ngIf="selectedFilter.department.length > 0"
+          >
+            <span
+              *ngFor="let x of selectedFilter.department; let i = index"
+              class="badge cursor-pointer"
+            >
+              <span
+                class=""
+                style="font-weight: 500; font-family: 'geometria'"
+                tabindex="0"
+              >
+                {{ x.dept }}
+              </span>
+              <i
+                class="fas fa-times cursor-pointer"
+                (click)="handleRemoveElement(x.id, 'department')"
+                tabindex="0"
+                aria-label="remove the filter data button"
+              ></i>
+            </span>
+          </div>
+        </div>
+        <!-- Classification -->
+        <div class="select show-search field-controller">
+          <ng-select
+            name="classification"
+            placeholder="Classifications"
+            tabindex="0"
+            [(ngModel)]="filterForm.classification"
+            (ngModelChange)="
+              handleFilterChange(
+                'filter',
+                'classification',
+                filterForm.classification
+              )
+            "
+          >
+            <ng-option
+              *ngFor="let x of filterData.classification | orderBy: 'class'"
+              [value]="x.id"
+            >
+              {{ x.class }}</ng-option
+            >
+          </ng-select>
+          <div
+            class="form-group mt-3 input-group"
+            *ngIf="selectedFilter.classification.length > 0"
+          >
+            <span
+              *ngFor="let x of selectedFilter.classification; let i = index"
+              class="badge cursor-pointer"
+            >
+              <span
+                class=""
+                style="font-weight: 500; font-family: 'geometria'"
+                tabindex="0"
+              >
+                {{ x.class }}
+              </span>
+              <i
+                class="fas fa-times cursor-pointer"
+                (click)="handleRemoveElement(x.id, 'classification')"
+                tabindex="0"
+                aria-label="remove the filter data button"
+              ></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Artist -->
+        <div class="select show-search field-controller">
+          <ng-select
+            name="artist"
+            tabindex="0"
+            placeholder="Artists"
+            [(ngModel)]="filterForm.artist"
+            (ngModelChange)="
+              handleFilterChange('filter', 'artist', filterForm.artist)
+            "
+          >
+            <ng-option
+              *ngFor="let x of filterData.artist | orderBy: 'name'"
+              [value]="x.id"
+              >{{ x.name }}</ng-option
+            >
+          </ng-select>
+          <div
+            class="form-group mt-3 input-group"
+            *ngIf="selectedFilter.artist.length > 0"
+          >
+            <span
+              *ngFor="let x of selectedFilter.artist; let i = index"
+              class="badge cursor-pointer"
+            >
+              <span
+                class=""
+                style="font-weight: 500; font-family: 'geometria'"
+                tabindex="0"
+              >
+                {{ x.name }}
+              </span>
+              <i
+                class="fas fa-times cursor-pointer"
+                (click)="handleRemoveElement(x.id, 'artist')"
+                tabindex="0"
+                aria-label="remove the filter data button"
+              ></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- date -->
+        <div class="select show-search field-controller">
+          <ng-select
+            name="date"
+            tabindex="0"
+            placeholder="Dates"
+            [(ngModel)]="filterForm.date"
+            (change)="handleFilterChange('filter', 'date', filterForm.date)"
+          >
+            <ng-option
+              *ngFor="let x of filterData.date | orderBy: 'date'"
+              [value]="x.date"
+            >
+              {{ x.date }}
+            </ng-option>
+          </ng-select>
+          <div
+            class="form-group mt-3 input-group"
+            *ngIf="selectedFilter.date.length > 0"
+          >
+            <span
+              *ngFor="let x of selectedFilter.date; let i = index"
+              class="badge cursor-pointer"
+            >
+              <span
+                class=""
+                style="font-weight: 500; font-family: 'geometria'"
+                tabindex="0"
+              >
+                {{ x.date }}
+              </span>
+              <i
+                class="fas fa-times cursor-pointer"
+                (click)="handleRemoveElement(x.id, 'date')"
+                tabindex="0"
+                aria-label="remove the filter data button"
+              ></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Culture -->
+        <div class="select show-search field-controller mr-0">
+          <ng-select
+            name="culture"
+            tabindex="0"
+            placeholder="Place of origins"
+            [(ngModel)]="filterForm.culture"
+            (change)="
+              handleFilterChange('filter', 'culture', filterForm.culture)
+            "
+          >
+            <ng-option
+              *ngFor="let x of filterData.culture | orderBy: 'Culture'"
+              [value]="x.culture"
+              >{{ x.culture }}
+            </ng-option>
+          </ng-select>
+          <div
+            class="form-group mt-3 input-group"
+            *ngIf="selectedFilter.culture.length > 0"
+          >
+            <span
+              *ngFor="let x of selectedFilter.culture; let i = index"
+              class="badge cursor-pointer"
+            >
+              <span
+                class=""
+                style="font-weight: 500; font-family: 'geometria'"
+                tabindex="0"
+              >
+                {{ x.culture }}
+              </span>
+              <i
+                class="fas fa-times cursor-pointer"
+                (click)="handleRemoveElement(x.id, 'culture')"
+                tabindex="0"
+                aria-label="remove the filter data button"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.list-img {
+  background: var(--list-image-placeholder-background-color) 0% 0% no-repeat
+    padding-box;
+  display: block;
+  height: var(--list-image-height);
+}
+
+#list {
+  background-color: var(--color-white);
+  .table {
+    thead {
+      th {
+        color: #6c757d !important;
+        text-transform: uppercase;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: #dee2e6 !important;
+        -webkit-text-transform: uppercase;
+        font-size: smaller;
+        padding: 0.7rem 0.5rem;
+      }
+    }
+    tbody {
+      tr > td {
+        border: none;
+        vertical-align: middle;
+      }
+    }
+  }
+}

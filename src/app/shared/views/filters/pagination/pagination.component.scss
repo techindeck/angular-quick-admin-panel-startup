@@ -1,0 +1,40 @@
+.page-item {
+  padding-right: 2%;
+  .page-link {
+    border: none;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 0.7rem;
+    text-align: center;
+    font-size: small;
+
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+
+    &:not(.cursor-not-allowed) {
+      color: var(--color-kohl);
+      background-color: var(--color-white);
+    }
+    &.cursor-not-allowed {
+      color: var(--color-sky);
+      background-color: var(--bs-pagination-focus-bg);
+      transition: all 300ms ease-in-out;
+      -webkit-transition: all 300ms ease-in-out;
+      -moz-transition: all 300ms ease-in-out;
+      -ms-transition: all 300ms ease-in-out;
+      -o-transition: all 300ms ease-in-out;
+    }
+    &:not(.cursor-not-allowed):hover {
+      color: var(--color-white);
+      background-color: var(--color-sky);
+    }
+  }
+  &.active {
+    .page-link {
+      background: var(--color-sky);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+#list.btn,
+#grid.btn {
+  min-height: calc(1.5em + 0.3rem + 10px);
+  //padding: 0 0.5rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #list.btn i,
+  #grid.btn i {
+    font-size: 1rem;
+  }
+}

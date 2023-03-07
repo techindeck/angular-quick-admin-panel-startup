@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center">
+  <button class="col-6 me-1 btn btn-sm btn-default border-0" id="grid" tabindex="0" aria-label="grid view" role="button"
+    [ngClass]="{ active: viewLayoutType == 'grid' }" (click)="changeLayout('grid')">
+    <i class="fas fa-th-large pt-1"></i>
+  </button>
+  <button class="col-6 ms-1 btn btn-sm btn-default border-0" id="list" role="button" tabindex="0" aria-label="list view"
+    [ngClass]="{ active: viewLayoutType == 'list' }" (click)="changeLayout('list')">
+    <i class="fas fa-list pt-1"> </i>
+  </button>
+  <!-- aria-label="grid-view {{ viewLayoutType == 'grid' ? 'active' : ' ' }}" -->
+</div>

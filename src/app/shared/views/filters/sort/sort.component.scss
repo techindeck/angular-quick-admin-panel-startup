@@ -1,0 +1,30 @@
+#gridView {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  row-gap: 8px;
+
+  .result-total {
+    grid-column: 1/5;
+  }
+  .sortByFilter {
+    grid-column: 5/-1;
+    ul {
+      list-style: none;
+      margin: 0;
+      justify-content: space-between;
+      display: flex;
+      float: right;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+.form-control-sm {
+  min-height: calc(1.5em + 0.5rem + 10px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  color: var(--font-background-color);
+}

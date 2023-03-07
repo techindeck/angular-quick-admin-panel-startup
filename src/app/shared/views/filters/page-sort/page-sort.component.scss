@@ -1,0 +1,22 @@
+ul {
+  list-style: none;
+  margin: 0;
+  justify-content: space-between;
+  display: flex;
+  float: right;
+  li {
+    display: inline-block;
+  }
+}
+.form-control-sm {
+  min-height: calc(1.5em + 0.5rem + 10px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  // color: var(--font-background-color);
+}
+@media only screen and (max-width: 600px) {
+  .sort-page {
+    display: block !important;
+  }
+}

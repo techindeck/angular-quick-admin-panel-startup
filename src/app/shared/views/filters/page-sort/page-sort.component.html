@@ -1,0 +1,13 @@
+<div class="d-flex sort-page" tabindex="0">
+  <label class="lbl-text-medium col-sm-4 col-form-label" for="sortBy" style="font-size: 100%">Sort
+    by:</label>
+  <div class="col-sm-8 px-0">
+    <ng-select name="sortBy" placeholder="Sort by" [searchable]="false" [clearable]="false" [(ngModel)]="sortType"
+      (ngModelChange)="handleSortBy()">
+      <ng-option value="Artist-ASC">Artist Name (A-Z)</ng-option>
+      <ng-option value="Artist-DESC">Artist Name (Z-A)</ng-option>
+      <ng-option value="Date-ASC">Date Ascending</ng-option>
+      <ng-option value="Date-DESC">Date Descending</ng-option>
+    </ng-select>
+  </div>
+</div>

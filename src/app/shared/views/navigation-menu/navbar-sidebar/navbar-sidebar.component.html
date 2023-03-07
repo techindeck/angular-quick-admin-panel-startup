@@ -1,0 +1,91 @@
+<sidebar-wrapper>
+  <sidebar-menu *ngFor="let menu of menus">
+    <ng-container *ngIf="menu.hasOptions">
+      <menu-title class="nav-title"
+        >{{ menu.title | titlecase }}
+        <i
+          class="fa-solid cursor-pointer collapsed"
+          tabindex="0"
+          aria-label="collapse"
+          role="link"
+          [ngClass]="{
+            'fa-circle-minus': menu.isCollapsed,
+            'fa-circle-plus': !menu.isCollapsed
+          }"
+          data-bs-toggle="collapse"
+          (click)="toggleMenuOption(menu)"
+        ></i>
+      </menu-title>
+      <div
+        class="collapse w-100"
+        id="{{ menu.title }}"
+        [ngClass]="{ show: menu.isCollapsed }"
+      >
+        <menu-item
+          *ngFor="let opt of menu.options"
+          class="nav-item"
+          routerLink="{{ opt.path }}"
+          routerLinkActive="active"
+          [attr.ariaLabel]="opt.name"
+          role="menuitem"
+        >
+          <i class="nav-symbol fas fa-boxes"></i>
+          <p class="nav-text">{{ opt.name | titlecase }}</p>
+        </menu-item>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!menu.hasOptions">
+      <menu-item
+        class="nav-item"
+        routerLink="{{ menu.path }}"
+        routerLinkActive="active"
+        [attr.ariaLabel]="menu.name"
+        role="menuitem"
+      >
+        <i class="nav-symbol fas fa-boxes"></i>
+        <p class="nav-text">{{ menu.name | titlecase }}</p>
+      </menu-item>
+    </ng-container>
+  </sidebar-menu>
+</sidebar-wrapper>
+
+<!-- <ng-template #withSubMenu>
+  <menu-title class="nav-title"
+    >{{ menu.title | titlecase }}
+    <i
+      class="fa-solid cursor-pointer collapsed"
+      [ngClass]="{
+        'fa-circle-minus': menu.isCollapsed,
+        'fa-circle-plus': !menu.isCollapsed
+      }"
+      data-bs-toggle="collapse"
+      (click)="toggleMenuOption(menu)"
+    ></i>
+  </menu-title>
+  <div
+    class="collapse w-100"
+    id="{{ menu.title }}"
+    [ngClass]="{ show: menu.isCollapsed }"
+  >
+    <menu-item
+      *ngFor="let opt of menu.options"
+      class="nav-item"
+      routerLink="{{ opt.path }}"
+      routerLinkActive="active"
+    >
+      <i class="nav-symbol fas fa-boxes"></i>
+      <p class="nav-text">{{ opt.name | titlecase }}</p>
+    </menu-item>
+  </div>
+</ng-template>
+
+<ng-template #withOutSubmenu>
+  <menu-item
+    class="nav-item"
+    routerLink="{{ menu.path }}"
+    routerLinkActive="active"
+  >
+    <i class="nav-symbol fas fa-boxes"></i>
+    <p class="nav-text">{{ menu.name | titlecase }}</p>
+  </menu-item>
+</ng-template> -->
