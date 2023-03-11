@@ -9,7 +9,7 @@ import { CardComponent } from '../card/card.component';
   template: `
     <app-card class="profile-card">
       <div class="card-image">
-        <img src="/assets/images/amit.jpeg" alt="" />
+        <img src="/assets/images/john-doe.png" alt="" />
       </div>
       <div class="card-body">
         <h1 class="name">Amit</h1>
