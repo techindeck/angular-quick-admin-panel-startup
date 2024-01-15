@@ -1,7 +1,0 @@
-{
-  "/api/*": {
-    "logLevel": "debug",
-    "secure": false,
-    "target": ""
-  }
-}

@@ -1,139 +1,129 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "yarn",
+    "schematicCollections": ["@angular-eslint/schematics"]
+  },
   "newProjectRoot": "projects",
   "projects": {
-    "quick-admin-startup": {
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "configurations": {
-            "development": {
-              "buildOptimizer": false,
-              "extractLicenses": false,
-              "namedChunks": true,
-              "optimization": false,
-              "sourceMap": true,
-              "vendorChunk": true
-            },
-            "production": {
-              "budgets": [
-                {
-                  "maximumError": "1mb",
-                  "maximumWarning": "500kb",
-                  "type": "initial"
-                },
-                {
-                  "maximumError": "4kb",
-                  "maximumWarning": "2kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "staging": {
-              "budgets": [
-                {
-                  "maximumError": "1mb",
-                  "maximumWarning": "500kb",
-                  "type": "initial"
-                },
-                {
-                  "maximumError": "4kb",
-                  "maximumWarning": "2kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.staging.ts"
-                }
-              ],
-              "outputHashing": "all"
-            }
-          },
-          "defaultConfiguration": "production",
-          "options": {
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "index": "src/index.html",
-            "inlineStyleLanguage": "scss",
-            "main": "src/main.ts",
-            "outputPath": "dist/quick-admin-startup",
-            "polyfills": [
-              "zone.js"
-            ],
-            "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "tsConfig": "tsconfig.app.json"
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "quick-admin-startup:build"
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "quick-admin-startup:build:development",
-              "proxyConfig": "proxy.config.json"
-            },
-            "production": {
-              "browserTarget": "quick-admin-startup:build:production",
-              "proxyConfig": "proxy-prod.config.json"
-            },
-            "staging": {
-              "browserTarget": "clms-client-collections:build:staging",
-              "proxyConfig": "proxy-staging.config.json"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "inlineStyleLanguage": "scss",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "scripts": [],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "tsConfig": "tsconfig.spec.json"
-          }
-        }
-      },
-      "prefix": "app",
+    "quick-admin-panel-startup": {
       "projectType": "application",
-      "root": "",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "sourceRoot": "src"
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "tid",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/quick-admin-panel-startup",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/config/environments/environment.ts",
+                  "with": "src/config/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/config/environments/environment.ts",
+                  "with": "src/config/environments/environment.dev.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "quick-admin-panel-startup:build:production",
+              "proxyConfig": "src/config/proxy/proxy.json"
+            },
+            "staging": {
+              "buildTarget": "quick-admin-panel-startup:build:staging",
+              "proxyConfig": "src/config/proxy/proxy.staging.json"
+            },
+            "development": {
+              "buildTarget": "quick-admin-panel-startup:build:development",
+              "proxyConfig": "src/config/proxy/proxy.dev.json"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "quick-admin-panel-startup:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        }
+      }
     }
-  },
-  "version": 1
+  }
 }
